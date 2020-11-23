@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PWA-EDUARDO RAMIREZ BELLO</title>
+    <script src="js/registraServiceWorker.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Ícono para la página web. Debe ponerse en la raíz de la página. -->
+    <link rel="icon" sizes="32x32" href="favicon.ico">
+    <!-- Color de la barra de navegación de Chrome en dispositivos móviles. -->
+    <meta name="theme-color" content="#FFFF00">
+    <!-- Configuración de la PWA: Chrome y Edge. -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Configuración para Web Clip en Safari. -->
+    <meta name="apple-mobile-web-app-title" content="dmppwa">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="img/icono2048.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icono256.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/icono1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="img/icono2048.png">
+    <script type="module" src="cmp/mi-footer.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Wide card with share menu button -->
+</head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Fórmula de Física</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <!-- Colored FAB button with ripple -->
+        <form action="javascript:;">
+      </nav>
+    </div>
+  </header>
+  <center>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Resistencia</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    La resistencia es una de las capacidades físicas básicas, particularmente aquella que nos permite llevar a cabo una actividad o esfuerzo durante el mayor tiempo posible. Una de las definiciones más utilizadas es la capacidad física que posee un cuerpo para soportar una resistencia externa durante un tiempo determinado.
+  <br>
+<br><br>Ejemplo:<br><br>
+Calcular El valor de la resistencia equivalente que se obtiene al asociar las dos resistencias.
+R1 = 1 KΩ = 1000 Ω
+R2 = 300 Ω
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <p>A Calcular</p>
+  </div>
+</div>    <!-- Numeric Textfield with Floating Label -->
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="Resistencia1">
+    <label class="mdl-textfield__label" for="r2">Ingrese la Resistencia1...</label>
+    <span class="mdl-textfield__error">Solo datos numericos</span>Resistencia1
+  </div><br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="Resistencia2">
+    <label class="mdl-textfield__label" for="r2">Ingrese la Resistencia2...</label>
+    <span class="mdl-textfield__error">Solo datos numericos</span>Resistencia2
+  </div>
+<br>
+    <!-- Accent-colored raised button with ripple -->
+<button id="calcular" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Calcular
+</button><br><br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+     <p><b>La resistencia es de: <span id="resultado"></span>Ohms</b></p>
+  </div>
+  <footer>
+      <p>
+        <mi-footer></mi-footer>
+      </p>
+    </footer>
+</form>
+  <script type="text/javascript">
+      calcular = document.getElementById("calcular");
+      Resistencia1 = document.getElementById("Resistencia1");
+      Resistencia2 = document.getElementById("Resistencia2");
+      resultado = document.getElementById("resultado");
+
+      calcular.onclick = function(){
+        if(Resistencia1.value!="" && Resistencia2.value!=""){
+          Resistenciat = (1 / Resistencia1.value + 1/Resistencia2.value);
+          resultado.innerHTML = Resistenciat
+          console.log(Resistenciat);
+        }else{
+          alert("Debes ingresar trabajo y segundos.")
+        }
+      };
+    </script>
+</div>
+  </center></main>
+  </body>
+</html>
